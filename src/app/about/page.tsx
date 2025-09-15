@@ -1,3 +1,11 @@
+export default function AboutPage() {
+    return (
+      <main>
+        <h1>About This Project</h1>
+        <p>This is a special birthday project!</p>
+      </main>
+    );
+}
 // // 1. Define the types for your API response.
 // // You only need to define the properties you actually use.
 // type Article = {
