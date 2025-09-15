@@ -8,7 +8,7 @@ export default function Home() {
   const [isGifVisible, setIsGifVisible] = useState(false);
 
   const handleExplode = () => {
-    setConfettiPieces(500);
+    setConfettiPieces(50);
     setIsGifVisible(true);
   };
 
@@ -34,9 +34,42 @@ export default function Home() {
     <div className="bg-[#fff9ed]">
       <div className="flex justify-center items-center h-screen" onClick={handleExplode}>
         <img className="object-cover relative" src="download (1).jpeg" alt="" />
-        <img className="object-cover absolute top-1/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2" src="download__2_-removebg-preview.png" alt="" />
-        {confettiPieces > 0 && <Confetti numberOfPieces={confettiPieces} recycle={false} colors={['#6a0dad', '#8a2be2', '#9932cc', '#ba55d3', '#dda0dd']} gravity={0.1} drawShape={drawHeart}/>}
-        {isGifVisible && <img src="download.gif" className="object-cover absolute w-1/8 h-2/8 top-1/8 left-1/8" />}
+        <img 
+            className="object-cover absolute top-1/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 drop-shadow-2xl filter brightness-110" 
+            src="download__2_-removebg-preview.png" 
+            alt="Overlay"
+          />
+        {confettiPieces > 0 && <Confetti numberOfPieces={confettiPieces} recycle={true} colors={['#6a0dad', '#8a2be2', '#9932cc', '#ba55d3', '#dda0dd']} gravity={0.1} drawShape={drawHeart}/>}
+        {isGifVisible && (
+          <div className="absolute w-full top-1/3">
+            <div className="relative">
+              <img 
+                src="download.gif" 
+                className="relative left-5/8 object-cover w-24 h-24 md:w-40 md:h-40 rounded-full shadow-md border-4 border-white animate-bounce"
+                alt="Celebration gif"
+              />
+            </div>
+            <div className="relative">
+              <img 
+                src="download (1).gif" 
+                className="relative left-1/8 object-cover w-24 h-24 md:w-40 md:h-40 rounded-full shadow-md border-4 border-white animate-bounce"
+                alt="Celebration gif"
+              />
+            </div><div className="relative">
+              <img 
+                src="download (2).gif" 
+                className="relative left-5/8 object-cover w-24 h-24 md:w-40 md:h-40 rounded-full shadow-md border-4 border-white animate-bounce"
+                alt="Celebration gif"
+              />
+            </div><div className="relative">
+              <img 
+                src="Happy Birthday Sticker - Happy Birthday - ค้นพบและแชร์ GIF.gif" 
+                className="relative left-1/8 object-cover w-24 h-24 md:w-40 md:h-40 rounded-full shadow-md border-4 border-white animate-bounce"
+                alt="Celebration gif"
+              />
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
