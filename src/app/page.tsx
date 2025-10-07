@@ -40,7 +40,7 @@ export default function Home() {
             alt="Overlay"
           />
           {/* Responsive cat fact text */}
-          <p className="absolute top-4/5 left-1/2 transform -translate-x-1/2 font-normal text-gray-700 text-center text-sm sm:text-lg">{meowfactData}</p>
+          <p className="absolute top-4/5 left-1/2 transform -translate-x-1/2 text-gray-700 text-center text-sm sm:text-lg">{meowfactData}</p>
         </div>
 
         {confettiPieces > 0 && <Confetti numberOfPieces={confettiPieces} recycle={true} colors={['#6a0dad', '#8a2be2', '#9932cc', '#ba55d3', '#dda0dd']} gravity={0.1} drawShape={drawHeart} />}
